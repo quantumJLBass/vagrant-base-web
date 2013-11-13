@@ -61,6 +61,7 @@ module MageInstaller
         fresh=false
         puts "insuring default folders"
         create_dir("/www/")
+        create_dir("/www/root/")
         create_dir("/_depo/")
         create_dir("/_BOXES/")
         create_dir("/database/data/")
@@ -133,7 +134,7 @@ module MageInstaller
         output=`vagrant destroy -f`
         puts output
 
-        self.clean_www()
+        //self.clean_www()
         self.clean_db()
         say("<%= color('cleaning the file DEPO folder', :bold, :yellow, :on_black) %>")
         FileUtils.rm_rf(Dir.glob("#{Dir.pwd}/_depo/*"))
@@ -153,7 +154,7 @@ module MageInstaller
         
         event("Pre")
         require 'launchy'
-        Launchy.open("http://local.general.dev/") #note this should be from setting file
+        Launchy.open("http://local.general.dev/info.php") #note this should be from setting file
         event("Post")
     end
 
