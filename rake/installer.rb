@@ -134,7 +134,7 @@ module MageInstaller
         output=`vagrant destroy -f`
         puts output
 
-        //self.clean_www()
+        #self.clean_www()
         self.clean_db()
         say("<%= color('cleaning the file DEPO folder', :bold, :yellow, :on_black) %>")
         FileUtils.rm_rf(Dir.glob("#{Dir.pwd}/_depo/*"))
