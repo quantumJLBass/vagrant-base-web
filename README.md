@@ -13,11 +13,11 @@ only a few steps before then can login to the admin area and begin development w
     > Note: if your on a mac you must have ruby 1.9 or above.  Look to [this article to update your ruby](http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/)
 1. run in powershell/command line 
         
-        > git clone git://github.com/washingtonstateuniversity/WSUMAGE-vagrant.git vvvbox
+        > git clone git://github.com/jeremyBass/vagrant-base-web.git webbase
 
 1. move to the new directory 
         
-        > cd vvvbox
+        > cd webbase
 
 1. run in powershell/command line/terminal 
         
@@ -101,34 +101,8 @@ Just to note you can by pass the rake taskes and just use Vagrant on it's own, b
 
 ***
 ## Customizable settings
-### Overall Structure
-
-1. **Option One development lite:**
-    This option is designed for a lighter environment to aid in quick development.  Some
-    of the core parts of the production servers are rolled up into a single  server.  The upside
-    to this is that if you have a system that is not so robust then you shouldn't see lags.  Also
-    For most module development you are not depending on any other module, so matching production
-    in it's structure is not needed.  9 out of 10 projects will be fine starting with this.
-
-1. **Option Two production match:**
-    This is to match the production environment as closely as possible, and lot all modules as well.
-    Given that by default the xDebug is turned on, this can run slower.  When a module is vetted but 
-    a peer review, this environment will be used.  As of yet there is no unit tests, but when there are
-    they will be loaded in this development area. ***note this need to be written out more, short if 3 servers, admin/frontend/database***
 
 ### Credentials and Such
-All database usernames and passwords for Magento installations included by default are 
-`devsqluser` and `devsqluser`.  You may also use the prompts to as everything is setting up 
-to change this but changing the setting file.
-
-All Magento admin usernames and passwords for the installations included by default 
-are `admin` and `admin2013`.  Magento requires a number in the admin password, so remember 
-if you change this in the settings file.
-
-#### Magento Stable ***(defaults)***
-* URL: `http://local.mage.dev`
-* DB Name: `mage`
-
 #### MySQL Root ***(defaults)***
 * User: `root`
 * Pass: `blank`
@@ -152,44 +126,10 @@ switch to CentOS and to a new provisioner option.  Currently options are Chef an
 1. [ngrep](http://ngrep.sourceforge.net/usage.html)
 1. [dos2unix](http://dos2unix.sourceforge.net/)
 1. [phpMemcachedAdmin](https://code.google.com/p/phpmemcacheadmin/) 1.2.2 BETA
-1. [adminer](http://www.adminer.org/) **will not be found on production ever!**
-1. [Magento 1.8.0](http://www.magentocommerce.com/download)
+
 **Note this is the highlights, for a full list look [here](#)**
 
-*** 
-#Magento Setup
-Plugings Loaded:
-    
-1. [WSUMAGE-admin-base](https://github.com/washingtonstateuniversity/WSUMAGE-admin-base.git)
-1. [WSUMAGE-theme-base](https://github.com/washingtonstateuniversity/WSUMAGE-theme-base.git)
-1. [eventTickets](https://github.com/jeremyBass/eventTickets.git)
-1. [Storeutilities](https://github.com/jeremyBass/Storeutilities.git)
-1. [WSUMAGE-structured-data](https://github.com/washingtonstateuniversity/WSUMAGE-structured-data.git)
-1. [Storeuser](https://github.com/jeremyBass/Storeuser.git)
-1. [sitemaps](https://github.com/jeremyBass/sitemaps.git)
-1. [webmastertools](https://github.com/jeremyBass/webmastertools.git)
-1. [WSUMAGE-ldap](https://github.com/washingtonstateuniversity/WSUMAGE-ldap.git)
-1. [pickupShipping](https://github.com/jeremyBass/pickupShipping.git)
-1. [AdminQuicklancher](https://github.com/jeremyBass/AdminQuicklancher.git)
-1. [dropshippers](https://github.com/jeremyBass/dropshippers.git)
-1. [Aoe_FilePicker](https://github.com/jeremyBass/Aoe_FilePicker.git)
-1. [mailing_services](https://github.com/jeremyBass/mailing_services.git)
-1. [WSUMAGE-iri-gateway](https://github.com/washingtonstateuniversity/WSUMAGE-iri-gateway.git)
-1. [custom_pdf_invoice](https://github.com/jeremyBass/custom_pdf_invoice.git)
-1. [Aoe_Profiler](https://github.com/jeremyBass/Aoe_Profiler.git)
-1. [Aoe_ManageStores](https://github.com/fbrnc/Aoe_ManageStores.git)
-1. [Aoe_LayoutConditions](#https://github.com/fbrnc/Aoe_LayoutConditions.git)
-1. [Aoe_AsyncCache](https://github.com/fbrnc/Aoe_AsyncCache.git)
-1. [Aoe_ApiLog](https://github.com/fbrnc/Aoe_ApiLog.git)
-1. [Aoe_ClassPathCache](https://github.com/AOEmedia/Aoe_ClassPathCache.git)
-1. [Enhanced Admin Grids](https://github.com/mage-eag/mage-enhanced-admin-grids.git)
 
-####Magento Settings
-For the development environment is a set base setting that you will receive when you first get your store 
-set up on the production area.  When you use the match, an authentication process will be done the first time
-then you will be able to make calls to production thru the API.   This will allow you to sink up you store 
-to your development area to test out a bug you are seeing or design something that is very specific to the 
-settings and content that is on the server.
 
 ***
 
